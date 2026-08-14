@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>SkyJoust — Controller</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shared/style.css">
+</head>
+<body class="controller-body">
+
+  <!-- ---------- JOIN SCREEN ---------- -->
+  <section id="screen-join" class="screen active">
+    <div class="join-card">
+      <div class="brand-title">SKYJOUST</div>
+      <div class="brand-sub">Your phone is the joust.</div>
+
+      <label class="field-label" for="input-room">ROOM CODE</label>
+      <input id="input-room" class="code-input" maxlength="4" autocomplete="off" autocapitalize="characters" placeholder="ABCD" inputmode="text">
+
+      <label class="field-label" for="input-name">YOUR NAME</label>
+      <input id="input-name" class="name-input" maxlength="14" autocomplete="off" placeholder="Sir Reginald">
+
+      <button id="btn-join" class="btn-primary">JOIN ROOM</button>
+      <div id="join-error" class="error-line"></div>
+    </div>
+  </section>
+
+  <!-- ---------- WAITING SCREEN ---------- -->
+  <section id="screen-waiting" class="screen">
+    <div class="waiting-wrap">
+      <div id="my-avatar" class="avatar-dot"></div>
+      <div class="brand-sub" id="waiting-name">You're in!</div>
+      <div class="waiting-msg">Waiting for the host to start the joust…</div>
+      <button id="btn-motion" class="btn-secondary">ENABLE TILT CONTROLS</button>
+      <div class="waiting-hint">Or just use the buttons below when the game starts.</div>
+    </div>
+  </section>
+
+  <!-- ---------- PLAY SCREEN ---------- -->
+  <section id="screen-play" class="screen">
+    <div id="beat-pulse" class="beat-pulse"></div>
+    <div class="play-hud">
+      <div id="play-status" class="play-status">ALIVE</div>
+      <div id="play-score" class="play-score">0</div>
+    </div>
+    <div id="zone-left" class="touch-zone zone-left">◀</div>
+    <div id="zone-right" class="touch-zone zone-right">▶</div>
+    <div id="zone-flap" class="flap-zone">FLAP</div>
+    <div id="tilt-indicator" class="tilt-indicator hidden"></div>
+  </section>
+
+  <!-- ---------- ELIMINATED / RESULTS SCREEN ---------- -->
+  <section id="screen-end" class="screen">
+    <div class="waiting-wrap">
+      <div class="brand-title" id="end-title" style="font-size:22px;">UNHORSED</div>
+      <div class="waiting-msg" id="end-detail">You were unhorsed. Watch the arena on the big screen!</div>
+      <div class="waiting-hint">Waiting for the next round…</div>
+    </div>
+  </section>
+
+  <div id="conn-banner" class="conn-banner hidden">Reconnecting…</div>
+
+<script src="/controller.js"></script>
+</body>
+</html>
